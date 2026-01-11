@@ -4,9 +4,8 @@
  */
 
 import React, { useEffect } from 'react';
-import { StatusBar, LogBox } from 'react-native';
+import { StatusBar, LogBox, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { AppNavigator } from './src/navigation';
 import { useAuthStore } from './src/store';
 import { colors } from './src/theme';
@@ -25,7 +24,7 @@ function App(): React.JSX.Element {
   }, [initialize]);
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <SafeAreaProvider>
         <StatusBar
           barStyle="light-content"
@@ -34,8 +33,9 @@ function App(): React.JSX.Element {
         />
         <AppNavigator />
       </SafeAreaProvider>
-    </GestureHandlerRootView>
+    </View>
   );
 }
 
 export default App;
+

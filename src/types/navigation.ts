@@ -15,7 +15,8 @@ export type RootStackParamList = {
 
 // Main Tab Navigator
 export type MainTabParamList = {
-    Home: undefined;
+    Home: { videoUrl?: string } | undefined;
+    Browse: { url?: string; platform?: string } | undefined;
     Downloads: undefined;
     Library: undefined;
     Settings: undefined;

@@ -33,7 +33,7 @@ export const APP_CONFIG = {
 } as const;
 
 // Supabase Configuration
-// In production, configure these via react-native-config or similar
+// Production credentials configured
 export const SUPABASE_CONFIG = {
     url: 'https://uxagutmugvqiorcmjzao.supabase.co',
     anonKey: 'sb_publishable_2uqrKsl4p-FPykMVg7ZKAw_SVkeFppi',

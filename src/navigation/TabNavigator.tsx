@@ -4,7 +4,7 @@ import React from 'react';
 import { StyleSheet, Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { HomeScreen, DownloadsScreen, LibraryScreen, SettingsScreen } from '../screens';
+import { HomeScreen, DownloadsScreen, LibraryScreen, SettingsScreen, BrowserScreen } from '../screens';
 import { MainTabParamList } from '../types';
 import { colors, spacing, textStyles, iconSize } from '../theme';
 
@@ -28,6 +28,15 @@ export const TabNavigator: React.FC = () => {
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <Icon name="home" size={size || iconSize.base} color={color} />
+                    ),
+                }}
+            />
+            <Tab.Screen
+                name="Browse"
+                component={BrowserScreen}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <Icon name="web" size={size || iconSize.base} color={color} />
                     ),
                 }}
             />
@@ -81,3 +90,4 @@ const styles = StyleSheet.create({
 });
 
 export default TabNavigator;
+
