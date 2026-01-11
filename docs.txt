@@ -1,0 +1,223 @@
+1. MVP Definition & Purpose
+
+A Minimum Viable Product (MVP) is an early, functional version of your app that includes only the most essential features to solve your users’ core problem, allowing you to validate your product idea quickly and gather feedback before larger investments in development.
+
+Objective for SnapTube-like Downloader MVP:
+
+Allow users to search for videos and download them in basic formats (e.g., MP4/MP3).
+
+Provide a clean, simple UI and reliable download experience on both Android and iOS using a shared codebase.
+
+Deploy quickly with just enough functionality to test adoption and retention metrics.
+
+2. Market Research & Validation
+
+Before technical planning:
+
+Conduct competitive analysis of existing video downloader apps and gaps (e.g., UI simplicity, speed, reliability).
+
+Define your target user personas (e.g., students, frequent travelers, offline content consumers).
+
+Research legal and policy landscape for video downloaders (Note: many platforms have usage restrictions; consult legal counsel).
+
+Key MVP Goals:
+
+Validate demand for offline video downloads.
+
+Measure retention and download frequency.
+
+Collect feedback to refine UX and priority features.
+
+3. Core Feature Prioritization (MVP Scope)
+
+Use a feature prioritization model (MoSCoW, RICE) to keep focus on must-have features only.
+
+Must-Have (MVP)
+
+User authentication (optional/email or social).
+
+Search feature to find videos (via URL input or keywords).
+
+Video download engine (supports basic formats: MP4, MP3).
+
+Download management UI (pause, resume, retry, list downloads).
+
+Local file storage and basic media player.
+
+Simple settings (download location, default format).
+
+Nice-to-Have (post-MVP)
+
+Background downloads.
+
+Batch downloads.
+
+Integration with popular platforms (YouTube, TikTok — note: must comply with legal policies).
+
+More resolution/codec options.
+
+Dark mode, offline mode.
+
+4. Technology Stack
+Frontend
+
+React Native CLI (not Expo) for granular native code control and platform-specific capabilities.
+
+React Navigation for app navigation.
+
+Component libraries (e.g., NativeBase or React Native Paper) for UI consistency.
+
+Backend
+
+(not strictly needed for basic MVP, optional)
+
+If search or video metadata aggregation is required, a backend using supabase Functions.
+
+File storage or metadata caching in supabase.
+
+Libraries & Tools
+
+react-native-fs or similar for file system access.
+
+Axios/Fetch for network calls.
+
+UI debugging & performance tools (Flipper, Redux DevTools).
+
+5. Architecture & Data Flow
+User Flow
+
+User opens app.
+
+Enters video URL or search term.
+
+App fetches metadata and displays options.
+
+User initiates download.
+
+System downloads file with progress indicators.
+
+Video stored locally and accessible via app library.
+
+Technical Flow
+
+Search handler (URL parser or search API -> returns metadata).
+
+Download manager (uses React Native FS for file handling).
+
+Local DB/Storage (SQLite or AsyncStorage for download history).
+
+6. UI/UX Design
+
+Create low-fidelity wireframes first, then build high-fidelity designs.
+
+Essential Screens
+
+Splash / Onboarding (optional)
+
+Home / Search
+
+Search Results / Download Options
+
+Download Queue / Status
+
+Local Library
+
+Settings
+
+Design criteria: clean, efficient, minimum taps to accomplish a task.
+
+7. Development Plan & Sprint Breakdown
+
+Sprint 0: Planning & Design (1–2 weeks)
+
+Finalize feature list
+
+Create wireframes and design prototypes
+
+Write technical specifications
+
+Sprint 1: App Skeleton & Navigation (1 week)
+
+Setup React Native CLI project
+
+Implement navigation and base UI screens
+
+Sprint 2: Search & Video Metadata (2 weeks)
+
+Input parsing and metadata fetch
+
+Show preview (title, thumbnail, size, format options)
+
+Sprint 3: Download Engine (2–3 weeks)
+
+Integrate download manager
+
+Display real-time progress and error handling
+
+Sprint 4: Local Storage & Library (1–2 weeks)
+
+Save downloads
+
+Display list with basic media playback
+
+Sprint 5: QA & Bug Fixing (1–2 weeks)
+
+Cross-platform testing
+
+Performance tuning
+
+Sprint 6: Beta Release & Feedback (ongoing)
+
+Deploy to TestFlight / Google Play Internal Test
+
+8. Testing & Quality Assurance
+
+Cross-platform functional testing on Android & iOS.
+
+Unit tests for core modules (download manager, parser).
+
+Beta testing with a small user group before broader release.
+
+9. Deployment & Distribution
+
+Android: Google Play internal test track.
+
+iOS: TestFlight distribution.
+
+Analytics: integrate supabase Analytics to track usage and key metrics.
+
+10. Metrics & Feedback Loop
+
+Define MVP success criteria:
+
+Number of active users within 30 days.
+
+Successful downloads per session.
+
+Crash rate < 2%.
+
+User satisfaction score from in-app feedback.
+
+Use analytics to plan next feature releases.
+
+11. Legal & Compliance Considerations
+
+Video downloaders often interact with third-party content. Before launch:
+
+Consult legal advisors on platform policies (YouTube, TikTok, etc.).
+
+Add clear Terms of Service and user responsibilities.
+
+Avoid proprietary API usage that violates terms.
+
+12. Post-MVP Product Roadmap
+
+Potential enhancements after validation:
+
+Support for more formats and quality presets.
+
+In-app content discovery.
+
+User accounts with cloud sync.
+
+Ad monetization or premium subscription.
